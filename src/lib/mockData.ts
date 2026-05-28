@@ -5,7 +5,8 @@ export type Role =
   | "Compliance Manager"
   | "Executive Leadership"
   | "Department Head"
-  | "Risk Analyst";
+  | "Risk Analyst"
+  | "Public User";
 
 export interface RoleConfig {
   name: Role;
@@ -112,6 +113,19 @@ export const ROLE_CONFIGS: Record<Role, RoleConfig> = {
       { label: "AI Score Accuracy", value: "94.6%", change: 1.4, trend: "up", description: "Confidence score model correlation index" },
       { label: "KRI Breach Triggers", value: 4, change: 1, trend: "up", description: "Key Risk Indicators outside safe bands" },
       { label: "Simulations Run", value: "248", change: 35.0, trend: "up", description: "Monte Carlo risk scenarios processed (7d)" },
+    ],
+  },
+  "Public User": {
+    name: "Public User",
+    title: "Public Guest Observer",
+    department: "Public Relations",
+    clearance: "Level 1 (L1 - Public Access / Read-Only)",
+    allowedViews: ["Dashboard", "AI Copilot"],
+    kpis: [
+      { label: "Public Trust Rating", value: "91.2%", change: 1.2, trend: "up", description: "Consumer trust & algorithmic fairness rating" },
+      { label: "Regulatory Compliance Rate", value: "98.4%", change: 0.5, trend: "up", description: "Completed external governance checks" },
+      { label: "Resolved Audits", value: "14", change: 3, trend: "up", description: "Mitigated risk findings closed this year" },
+      { label: "Ethical AI Index", value: "95.6", change: 0.8, trend: "up", description: "Public transparency compliance index" },
     ],
   },
 };
